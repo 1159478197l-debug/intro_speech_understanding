@@ -14,6 +14,8 @@ def VAD(waveform, Fs):
        greater than 10% of maximum energy
     '''
     raise RuntimeError("You need to change this part")
+    framelength = int(0.025*Fs)
+    frameskip = int(0.01*Fs)
 
 def segments_to_models(segments, Fs):
     '''
