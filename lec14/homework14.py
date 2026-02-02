@@ -10,6 +10,7 @@ def synthesize(text, lang, filename):
     filename (str) - the filename in which it should be saved
     '''
     raise RuntimeError("You need to write this!")
+    gtts.gTTS(text=text,lang=lang.save(filename)
 
 def make_a_corpus(texts, languages, filenames):
     '''
@@ -25,4 +26,14 @@ def make_a_corpus(texts, languages, filenames):
     recognized_texts - list of the strings that were recognized from each file
     '''
     raise RuntimeError("You need to write this!")
-        
+    r = speech_recognition,Recognizer()
+    recognized_texts = []
+    for text, lang, filename in zip(text, languages, filenames):
+        gtts.gTTs(text=text, lang=lang).save(filename+'.mp3')
+        x, fs = librosa.load(filename+'.mp3')
+        soundfile.write(filename+'.wav',x,fs)
+        with speech_recognition,AudioFile(filename+'.wav'')as source:
+            audio = r.record(source)
+            text = r.recognize_google(audio, language=lang)
+            recognized_texts.append(text)
+    return recognized_texts        
