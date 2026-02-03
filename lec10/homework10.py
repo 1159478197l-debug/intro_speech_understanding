@@ -6,7 +6,7 @@ def get_features(waveform, Fs):
     Get features from a waveform.
     @params:
     waveform (numpy array) - the waveform
-    Fs (scalar) - sampling frequency.
+    Fs (scalar) - sampling frequency. 
 
     @return:
     features (NFRAMES,NFEATS) - numpy array of feature vectors:
