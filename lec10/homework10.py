@@ -18,6 +18,10 @@ def get_features(waveform, Fs):
     
     '''
     raise RuntimeError("You need to change this part")
+    L = int(0.004*Fs)
+    S = int(0.002*Fs)
+    mstft = np.abs(np.fft.fft(np.array([ waveform[m+1:m+1+L]-waveform[m:m+L] for m in range(0,len(waveform)-L,S)]),axis=1))
+    
 
 def train_neuralnet(features, labels, iterations):
     '''
